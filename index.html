@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charles Stafford |Finance & Accounting Student Lehigh University</title>
+    <title>Charles Stafford | Finance & Accounting Student | Lehigh University</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -48,6 +48,9 @@
         .subtitle {
             font-size: 1.25rem;
             opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .about-me {
             margin-bottom: 3rem;
         }
         .cta-grid {
@@ -69,31 +72,50 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
         }
+        footer {
+            margin-top: 2rem;
+        }
+        .icons a {
+            margin: 0 0.5rem;
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .icons a:hover {
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Add your profile picture here -->
-        <img src="assets/Screenshot 2025-05-06 171626" alt="Charles Stafford" class="profile-pic">
-        
+        <img src="assets/profile.jpg" alt="Charles Stafford" class="profile-pic">
         <h1>Charles M. Stafford</h1>
-        <p class="subtitle">Data Science • Machine Learning • Research Analytics</p>
+        <p class="subtitle">Finance & Accounting Student | Lehigh University</p>
+
+        <div class="about-me">
+            <p>I'm a passionate Finance and Accounting student with interests in data science, machine learning, and financial analysis. In my free time, I enjoy sports, scuba diving, and exploring new challenges.</p>
+        </div>
+
         <div class="cta-grid">
             <a href="resume.html" class="cta-button">View Resume</a>
             <a href="projects.html" class="cta-button">Explore Projects</a>
         </div>
     </header>
-    <footer id="footer">
-        <ul class="icons">
-            <li><a href="https://linkedin.com/in/yourprofile" class="icon brands fa-linkedin" aria-label="LinkedIn"></a></li>
-            <li><a href="https://github.com/yourusername" class="icon brands fa-github" aria-label="GitHub"></a></li>
-            <li><a href="mailto:your@email.com" class="icon fa-envelope" aria-label="Email"></a></li>
-        </ul>
-    </footer>
 
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+    <footer>
+        <div class="icons">
+             <div class="icons">
+      <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn">
+          <img src="images/linkedin-icon.svg" alt="LinkedIn" width="32">
+      </a>
+      <a href="https://github.com/yourusername" aria-label="GitHub">
+          <img src="images/github-icon.svg" alt="GitHub" width="32">
+      </a>
+      <a href="mailto:your@email.com" aria-label="Email">
+          <img src="images/gmail-icon.svg" alt="Email" width="32">
+      </a>
+        </div>
+    </footer>
 </body>
 </html>
 
