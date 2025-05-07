@@ -6,27 +6,80 @@
     <title>Sentiment Analysis | Charles Stafford</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Same styles as housing-analysis.html */
-        /* (Use identical styling for consistency) */
+        :root {
+            --primary: #6C63FF;
+            --dark: #121212;
+            --light: #F8F9FA;
+            --gray: #2D2D2D;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .project-content {
+            background: var(--gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 1rem;
+            background: var(--gray);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="../projects.html" class="back-button">
-            ← All Projects
-        </a>
+        <a href="../projects.html" class="back-button">← All Projects</a>
 
         <h1>10-K Filing Sentiment Analysis</h1>
 
         <div class="project-content">
             <h2>Project Overview</h2>
             <p>Analysis of sentiment measures derived from 10-K filings and their correlation with stock returns for S&P 500 companies.</p>
-            
+
             <h3>Key Findings</h3>
             <ul>
-                <li>LM and ML sentiment measures show significant correlations</li>
-                <li>Growth sentiment strongly associated with returns</li>
-                <li>Results differ from Garcia et al. (2022) due to sample differences</li>
+                <li>LM and ML sentiment measures show significant correlations.</li>
+                <li>Growth sentiment strongly associated with returns.</li>
+                <li>Results differ from Garcia et al. (2022) due to sample differences.</li>
             </ul>
         </div>
 
