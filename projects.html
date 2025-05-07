@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Charles Stafford | Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Markdown-to-HTML Converter -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+		<style>
+			.report {
+				background: rgba(255,255,255,0.03);
+				padding: 2em;
+				border-radius: 5px;
+				margin: 2em 0;
+				text-align: left;
+			}
+			.project-gallery img {
+				width: 100%;
+				max-width: 600px;
+				border: 1px solid #444;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<header id="header">
+			<h1>My Projects</h1>
+			<p><a href="index.html" class="button">← Back to Home</a></p>
+		</header>
+
+		<section style="max-width: 1000px; margin: 0 auto; padding: 0 2em;">
+			<!-- Midterm Report (Rendered Markdown) -->
+			<div class="report" id="midterm-report-html"></div>
+
+			<!-- Final Project (Rendered Markdown + Images) -->
+			<div class="report" id="final-project-html"></div>
+			<div class="project-gallery">
+				<img src="assets/Final_Project/screenshot1.png" alt="Final Project Screenshot">
+				<img src="assets/Final_Project/screenshot2.png" alt="Final Project Screenshot">
+			</div>
+		</section>
+
+		<script>
+			// Convert Markdown to HTML
+			const converter = new showdown.Converter();
+			
+			// Midterm Report
+			fetch('assets/Midterm_report.md')
+				.then(response => response.text())
+				.then(text => {
+					document.getElementById('midterm-report-html').innerHTML = `
+						<h2>Midterm Report: Sentiment Analysis in 10-K Filings</h2>
+						${converter.makeHtml(text)}
+					`;
+				});
+
+			// Final Project README
+			fetch('assets/Final_Project/README.md')
+				.then(response => response.text())
+				.then(text => {
+					document.getElementById('final-project-html').innerHTML = `
+						<h2>Final Project: [Project Name]</h2>
+						${converter.makeHtml(text)}
+					`;
+				});
+		</script>
+
+		<!-- Same footer as index.html -->
+	</body>
+</html>
