@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Analysis | Charles Stafford</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --dark: #121212;
+            --light: #F8F9FA;
+            --gray: #2D2D2D;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 1rem;
+            background: var(--gray);
+            text-align: center;
+        }
+        .project-content {
+            background: var(--gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../projects.html" class="back-button">
+            ← All Projects
+        </a>
+
+        <h1>Housing & School Rating Analysis</h1>
+
+        <div class="project-content">
+            <h2>Project Overview</h2>
+            <p>This project examines the relationship between housing costs, school ratings, and crime statistics using machine learning models. Key findings include...</p>
+            
+            <h3>Methodology</h3>
+            <ul>
+                <li>Data collected from crime, housing, school level sources</li>
+                <li>Random Forest and Gradient Boosting models</li>
+                <li>Feature importance analysis</li>
+            </ul>
+        </div>
+
+        <h2>Key Visualizations</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="../assets/Final_Project/output_14_3.png" alt="Housing Cost Feature Importance">
+                <div class="gallery-caption">Feature Importance: Housing Cost</div>
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/Final_Project/output_14_6.png" alt="School Rating Feature Importance">
+                <div class="gallery-caption">Feature Importance: School Rating</div>
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/Final_Project/output_14_7.png" alt="Actual vs Predicted">
+                <div class="gallery-caption">Actual vs Predicted Housing Costs</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
