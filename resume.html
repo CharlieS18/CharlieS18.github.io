@@ -6,12 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			.pdf-container {
+			.pdf-viewer {
 				width: 100%;
 				height: 80vh;
+				border: 1px solid rgba(255,255,255,0.1);
 				margin: 2em 0;
-				border: 1px solid #ddd;
-				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 			}
 		</style>
 	</head>
@@ -21,9 +20,9 @@
 			<p><a href="index.html" class="button">← Back to Home</a></p>
 		</header>
 
-		<!-- Embedded PDF (View Only) -->
+		<!-- PDF Viewer (No Download Required) -->
 		<section style="text-align: center; padding: 0 2em;">
-			<div class="pdf-container">
+			<div class="pdf-viewer">
 				<embed 
 					src="assets/Charles_M_Stafford_Resume.pdf#toolbar=0&navpanes=0" 
 					type="application/pdf" 
@@ -31,7 +30,7 @@
 					height="100%"
 				>
 			</div>
-			<p><small>Can't view the PDF? <a href="assets/Charles_M_Stafford_Resume.pdf" target="_blank">Open in new tab</a>.</small></p>
+			<p><small>Viewing issues? <a href="assets/Charles_M_Stafford_Resume.pdf" target="_blank">Open in new tab</a> (no download).</small></p>
 		</section>
 
 		<!-- Same footer as index.html -->

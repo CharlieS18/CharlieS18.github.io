@@ -5,21 +5,48 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- Markdown-to-HTML Converter -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 		<style>
-			.report {
-				background: rgba(255,255,255,0.03);
+			/* Improved Typography */
+			body {
+				font-family: 'Inter', sans-serif;
+				color: #e0e0e0 !important; /* Light gray for better contrast */
+				line-height: 1.6;
+			}
+			h1, h2, h3 {
+				font-weight: 600;
+				color: #ffffff !important;
+			}
+			
+			/* Project Containers */
+			.project-section {
+				background: rgba(30,30,30,0.7);
 				padding: 2em;
-				border-radius: 5px;
+				border-radius: 8px;
 				margin: 2em 0;
-				text-align: left;
+				box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+			}
+			.project-gallery {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 20px;
+				margin: 2em 0;
 			}
 			.project-gallery img {
 				width: 100%;
-				max-width: 600px;
 				border: 1px solid #444;
-				margin: 10px 0;
+				border-radius: 4px;
+				transition: transform 0.3s;
+			}
+			.project-gallery img:hover {
+				transform: scale(1.03);
+			}
+			.chart-title {
+				font-size: 1.1em;
+				margin-top: 0.5em;
+				text-align: center;
+				color: #ffffff;
 			}
 		</style>
 	</head>
@@ -30,39 +57,60 @@
 		</header>
 
 		<section style="max-width: 1000px; margin: 0 auto; padding: 0 2em;">
-			<!-- Midterm Report (Rendered Markdown) -->
-			<div class="report" id="midterm-report-html"></div>
+			<!-- Final Project -->
+			<div class="project-section">
+				<h2>Final Project: Housing and School Rating Analysis</h2>
+				<div id="final-project-report"></div>
+				
+				<h3 style="margin-top: 1.5em;">Key Visualizations</h3>
+				<div class="project-gallery">
+					<div>
+						<img src="assets/Final_Project/output_14_3.png" alt="Housing Cost Feature Importance">
+						<p class="chart-title">Feature Importance for Housing Cost</p>
+					</div>
+					<div>
+						<img src="assets/Final_Project/output_14_6.png" alt="School Rating Feature Importance">
+						<p class="chart-title">Feature Importance for School Rating</p>
+					</div>
+					<div>
+						<img src="assets/Final_Project/output_14_7.png" alt="Actual vs Predicted Housing Costs">
+						<p class="chart-title">Actual vs Predicted Housing Costs</p>
+					</div>
+					<div>
+						<img src="assets/Final_Project/output_15_0.png" alt="Feature Correlation Heatmap">
+						<p class="chart-title">Feature Correlation Heatmap</p>
+					</div>
+					<div>
+						<img src="assets/Final_Project/output_16_4.png" alt="Housing Cost vs Crime Rate">
+						<p class="chart-title">Housing Cost vs Crime Rate</p>
+					</div>
+				</div>
+			</div>
 
-			<!-- Final Project (Rendered Markdown + Images) -->
-			<div class="report" id="final-project-html"></div>
-			<div class="project-gallery">
-				<img src="assets/Final_Project/screenshot1.png" alt="Final Project Screenshot">
-				<img src="assets/Final_Project/screenshot2.png" alt="Final Project Screenshot">
+			<!-- Midterm Report -->
+			<div class="project-section">
+				<h2>Midterm Report: Sentiment Analysis in 10-K Filings</h2>
+				<div id="midterm-report"></div>
 			</div>
 		</section>
 
+		<!-- Markdown Converter -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 		<script>
-			// Convert Markdown to HTML
 			const converter = new showdown.Converter();
 			
-			// Midterm Report
+			// Load Final Project Report
+			fetch('assets/Final_Project/Project_(3).md')
+				.then(response => response.text())
+				.then(text => {
+					document.getElementById('final-project-report').innerHTML = converter.makeHtml(text);
+				});
+
+			// Load Midterm Report
 			fetch('assets/Midterm_report.md')
 				.then(response => response.text())
 				.then(text => {
-					document.getElementById('midterm-report-html').innerHTML = `
-						<h2>Midterm Report: Sentiment Analysis in 10-K Filings</h2>
-						${converter.makeHtml(text)}
-					`;
-				});
-
-			// Final Project README
-			fetch('assets/Final_Project/README.md')
-				.then(response => response.text())
-				.then(text => {
-					document.getElementById('final-project-html').innerHTML = `
-						<h2>Final Project: [Project Name]</h2>
-						${converter.makeHtml(text)}
-					`;
+					document.getElementById('midterm-report').innerHTML = converter.makeHtml(text);
 				});
 		</script>
 
