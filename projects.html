@@ -57,29 +57,50 @@
         .project-card p {
             opacity: 0.9;
         }
+        .data-sources {
+            margin-top: 3rem;
+        }
+        .data-sources h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .data-sources a {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-right: 1rem;
+            transition: background 0.3s;
+        }
+        .data-sources a:hover {
+            background: #5849d9;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Changed to absolute path -->
-        <a href="/index.html" class="back-button">
-            ← Back to Home
-        </a>
+        <a href="/index.html" class="back-button">← Back to Home</a>
 
         <h1>Project Portfolio</h1>
 
         <div class="project-grid">
-            <!-- Changed to absolute path -->
-            <a href="/Projects/Chicago_Housing_Analysis.html" class="project-card">
+            <a href="/projects/Chicago_Housing_Analysis.html" class="project-card">
                 <h2>Housing Analysis</h2>
-                <p>Machine learning models predicting Chicago housing costs based on school ratings and crime data</p>
+                <p>Machine learning models predicting Chicago housing costs based on school ratings and crime data.</p>
             </a>
 
-            <!-- Changed to absolute path -->
-            <a href="/Projects/sentiment_analysis.html" class="project-card">
+            <a href="/projects/sentiment_analysis.html" class="project-card">
                 <h2>Sentiment Analysis</h2>
-                <p>NLP analysis of 10-K filings and their correlation with stock returns</p>
+                <p>NLP analysis of 10-K filings and their correlation with stock returns.</p>
             </a>
+        </div>
+
+        <div class="data-sources">
+            <h2>Data Sources</h2>
+            <a href="https://github.com/Michaelmsk326/Final_Project_Michael" target="_blank">Housing Analysis Data</a>
+            <a href="https://github.com/CharlieS18/asgn-05-CharlieS18" target="_blank">Sentiment Analysis Data</a>
         </div>
     </div>
 </body>
